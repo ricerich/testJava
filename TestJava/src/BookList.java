@@ -25,8 +25,7 @@ public class BookList
 //		String 	bookname1;
 //		String	publisher1;
 //		int		price1;
-//	}
-	//π€¿∏∑Œ ª¨≤®¿”!
+//	}//π€¿∏∑Œ ª¨≤®¿”!
 	
 	//3.∞¥√º
 //	Book book1 = new Book();
