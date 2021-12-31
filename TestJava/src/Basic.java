@@ -2,7 +2,7 @@
 public class Basic 
 {
 	public static void main(String args[]) 
-	{ // ¸Ş¼ÒµåÀÌ¸é¼­ ÇÁ·Î±×·¥½ÇÇà¿¡ °ü¿©ÇÔ
+	{ // ë©”ì†Œë“œì´ë©´ì„œ í”„ë¡œê·¸ë¨ì‹¤í–‰ì— ê´€ì—¬í•¨
 		
 //		new Booklist().getBookList();
 //		
@@ -28,35 +28,33 @@ public class Basic
 //		BookList bl4 = new BookList();
 //		bl4.getCon();
 //		bl4.getBookList();
-//		bl4.printBook(); //1.º¯¼ö Ãâ·Â
+//		bl4.printBook(); //1.ë³€ìˆ˜ ì¶œë ¥
 //		
 //		bl4.getCon();
-//		bl4.printBookArr();//2.¹è¿­ Ãâ·Â
-//		bl4.printBookArr();//2.¹è¿­ Ãâ·Â -> µÎ¹øÂ°´Â getCon()ÇÊ¿ä¾øÀ½: ÀÌÀ¯´Â ¹è¿­¿¡ ´Ù ´ã°ÜÀÖÀ¸´Ï±î~!!!
+//		bl4.printBookArr();//2.ë°°ì—´ ì¶œë ¥
+//		bl4.printBookArr();//2.ë°°ì—´ ì¶œë ¥ -> ë‘ë²ˆì§¸ëŠ” getCon()í•„ìš”ì—†ìŒ: ì´ìœ ëŠ” ë°°ì—´ì— ë‹¤ ë‹´ê²¨ìˆìœ¼ë‹ˆê¹Œ~!!!
 		
-//		BookList bl5 = new BookList();//3.°´Ã¼ Ãâ·Â
+//		BookList bl5 = new BookList();//3.ê°ì²´ ì¶œë ¥
 //		bl5.getCon();
 //		bl5.getBookList();
 //		
 //		bl5.getCon();
-//		bl5.book.printBook();//Á¦ÀÏ ¸¶Áö¸·¿¡ ´ã±ä ÇÑ³ğ¸¸ Ãâ·ÂµÊ!
+//		bl5.book.printBook();//ì œì¼ ë§ˆì§€ë§‰ì— ë‹´ê¸´ í•œë†ˆë§Œ ì¶œë ¥ë¨!
 		
-		BookList bl6 = new BookList();//4.°´Ã¼¹è¿­ Ãâ·Â
-		bl6.getCon();
-		bl6.getBookList();
+//		BookList bl6 = new BookList();//4.ê°ì²´ë°°ì—´ ì¶œë ¥
+//		bl6.getCon();
+//		bl6.getBookList();
 		
 //		bl6.bookArr[0].printBook();
 //		bl6.bookArr[1].printBook();
 		
-		for(int i=0; i<bl6.bookArr.length;++i)
-			bl6.bookArr[i].printBook();
+//		for(int i=0; i<bl6.bookArr.length;++i)
+//			bl6.bookArr[i].printBook();
 				
-				
-		
-		
-		
-		
-		
+		BookList bl7 = new BookList();//4.ê°ì²´ë°°ì—´ ì¶œë ¥
+		bl7.getCon();	
+		bl7.getBookList();
+		bl7.printBookObjArr();
 		
 	}
 }

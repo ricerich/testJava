@@ -1,14 +1,14 @@
 
 public class Book 
 {
-	//1.¸â¹öº¯¼ö
+	//1.ë©¤ë²„ë³€ìˆ˜
 	int 	bookid1;
 	String 	bookname1;
 	String	publisher1;
 	int		price1;
 	
-	//2.»ı¼ºÀÚ - ¾È¸¸µé²¨ÀÓ!
-	//3.¸Ş¼Òµå
+	//2.ìƒì„±ì - ì•ˆë§Œë“¤êº¼ì„!
+	//3.ë©”ì†Œë“œ
 	void printBook()
 	{
 		System.out.print("\t" +bookid1);

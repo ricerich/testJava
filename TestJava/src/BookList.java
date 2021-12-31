@@ -7,51 +7,51 @@ import java.sql.Statement;
 
 public class BookList 
 {
-	//1.º¯¼ö
+	//1.ë³€ìˆ˜
 	int 	bookid;
 	String 	bookname;
 	String	publisher;
 	int		price;
 	
-	//2.¹è¿­
+	//2.ë°°ì—´
 	int 	bookidArr[];
 	String 	booknameArr[];
 	String	publisherArr[];
 	int		priceArr[];
 	
-	//3.°´Ã¼ ->¸ÕÀú Å¬·¡½º¸¦ ¸¸µé¾î¾ßÇÔ! -> ³»ºÎ, ¿ÜºÎ
-//	class Book{ //³»ºÎ Å¬·¡½º·Î
+	//3.ê°ì²´ ->ë¨¼ì € í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ì•¼í•¨! -> ë‚´ë¶€, ì™¸ë¶€
+//	class Book{ //ë‚´ë¶€ í´ë˜ìŠ¤ë¡œ
 //		int 	bookid1;
 //		String 	bookname1;
 //		String	publisher1;
 //		int		price1;
-//	}//¹ÛÀ¸·Î »¬²¨ÀÓ!
+//	}//ë°–ìœ¼ë¡œ ëº„êº¼ì„!
 	
-	//3.°´Ã¼
+	//3.ê°ì²´
 //	Book book1 = new Book();
 	Book book;
 	
-	//4.°´Ã¼¹è¿­
+	//4.ê°ì²´ë°°ì—´
 //	Book bookArr[] = new Book[10];
 	Book bookArr[];
 	
 	
-	Connection con; // 1.¸â¹öº¯¼ö
+	Connection con; // 1.ë©¤ë²„ë³€ìˆ˜
 	Statement stmt;
 	ResultSet rs;
 	
-	public BookList() // ¸â¹öº¯¼öÀÇ °ªÀ» ÃÊ±âÈ­ ÇÑ´Ù. º»¿¬ÀÇ »ı¼ºÀÚÀÇ ¿ªÇÒ
+	public BookList() // ë©¤ë²„ë³€ìˆ˜ì˜ ê°’ì„ ì´ˆê¸°í™” í•œë‹¤. ë³¸ì—°ì˜ ìƒì„±ìì˜ ì—­í• 
 	{
-		//2.¹è¿­ ÃÊ±âÈ­(0ÃÊ±âÈ­´Â ¾Æ´Ô, ¸¸µå´Â ÃÊ±âÈ­(»ı¼ºÃÊ±âÈ­)
+		//2.ë°°ì—´ ì´ˆê¸°í™”(0ì´ˆê¸°í™”ëŠ” ì•„ë‹˜, ë§Œë“œëŠ” ì´ˆê¸°í™”(ìƒì„±ì´ˆê¸°í™”)
 		bookidArr = new int[10];
 		booknameArr = new String[10];
 		publisherArr = new String[10];
 		priceArr = new int[10];
 		
-		//3.°´Ã¼ ÃÊ±âÈ­(»ı¼º ÃÊ±âÈ­)
+		//3.ê°ì²´ ì´ˆê¸°í™”(ìƒì„± ì´ˆê¸°í™”)
 		book = new Book();
 		
-		//4.°´Ã¼ ¹è¿­ ÃÊ±âÈ­(»ı¼º ÃÊ±âÈ­)
+		//4.ê°ì²´ ë°°ì—´ ì´ˆê¸°í™”(ìƒì„± ì´ˆê¸°í™”)
 		bookArr = new Book[10];
 		
 		for(int i=0; i<bookArr.length; ++i)
@@ -60,39 +60,39 @@ public class BookList
 		
 	}
 
-	public void getCon()// 3.(ÀÏ¹İ) ¸Ş¼Òµå 
+	public void getCon()// 3.(ì¼ë°˜) ë©”ì†Œë“œ 
 	{
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String userid = "madang"; // c##Ãß°¡
-		String pwd = "madang"; // c##Ãß°¡
+		String userid = "madang"; // c##ì¶”ê°€
+		String pwd = "madang"; // c##ì¶”ê°€
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("µå¶óÀÌ¹ö ·Îµå ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ë¡œë“œ ì„±ê³µ");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ÁØºñ .....");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì¤€ë¹„ .....");
 			con = DriverManager.getConnection(url, userid, pwd);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void getBookList() { // 3.¸Ş¼Òµå
+	public void getBookList() { // 3.ë©”ì†Œë“œ
 		String query = "SELECT bookid, bookname, publisher, price FROM book";
 		try {
 			stmt = con.createStatement(); // 2
 			rs = stmt.executeQuery(query); // 3
 			System.out.println("BOOK ID \tBOOK NAME \tPUBLISHER \tPRICE");
 			
-			//2.¹è¿­¿ë ÀÎµ¦½º º¯¼ö
+			//2.ë°°ì—´ìš© ì¸ë±ìŠ¤ ë³€ìˆ˜
 			int index=0;
 			
-			//4.°´Ã¼¹è¿­¿ë ÀÎµ¦½º º¯¼ö
+			//4.ê°ì²´ë°°ì—´ìš© ì¸ë±ìŠ¤ ë³€ìˆ˜
 			int index2=0;
 			while (rs.next()) {
 //				System.out.print("\t" + rs.getInt(1));
@@ -100,16 +100,16 @@ public class BookList
 //				System.out.print("\t\t\t" + rs.getString(3));
 //				System.out.println("\t\t\t\t" + rs.getInt(4));
 				
-				//1.º¯¼ö
+				//1.ë³€ìˆ˜
 				bookid 	  = rs.getInt(1);
 				bookname  = rs.getString(2);
 				publisher = rs.getString(3);
 				price 	  = rs.getInt(4);
 				
-				//1.º¯¼ö Ãâ·Â
+				//1.ë³€ìˆ˜ ì¶œë ¥
 //				printBook();
 				
-				//2.¹è¿­
+				//2.ë°°ì—´
 				bookidArr[index]    = rs.getInt(1);
 				booknameArr[index]  = rs.getString(2);
 				publisherArr[index] = rs.getString(3);
@@ -117,7 +117,7 @@ public class BookList
 				
 				index++;
 				
-				//3.°´Ã¼
+				//3.ê°ì²´
 				book.bookid1   = rs.getInt(1);
 				book.bookname1 = rs.getString(2);
 				book.publisher1= rs.getString(3);
@@ -125,13 +125,13 @@ public class BookList
 				
 //				book.printBook();
 				
-				//4.°´Ã¼ ¹è¿­
+				//4.ê°ì²´ ë°°ì—´
 				bookArr[index2].bookid1   = rs.getInt(1);
 				bookArr[index2].bookname1 = rs.getString(2);
 				bookArr[index2].publisher1= rs.getString(3);
 				bookArr[index2].price1	 = rs.getInt(4);
 				
-//				bookArr[index2].printBook();//ÀÌ°Å ¾µ²¨ °°À¸¸é ±×³É °´Ã¼¾²¸é µÇÁö
+//				bookArr[index2].printBook();//ì´ê±° ì“¸êº¼ ê°™ìœ¼ë©´ ê·¸ëƒ¥ ê°ì²´ì“°ë©´ ë˜ì§€
 				index2++;
 
 			}
@@ -141,7 +141,7 @@ public class BookList
 		}
 	}
 	
-	//1.º¯¼ö Ãâ·Â¿ë
+	//1.ë³€ìˆ˜ ì¶œë ¥ìš©
 	void printBook()
 	{
 		System.out.print("\t" +bookid);
@@ -151,7 +151,7 @@ public class BookList
 		
 	}
 	
-	//2.¹è¿­ Ãâ·Â¿ë
+	//2.ë°°ì—´ ì¶œë ¥ìš©
 	void printBookArr()
 	{
 		for(int i=0; i<bookidArr.length; ++i)
@@ -160,6 +160,18 @@ public class BookList
 			System.out.print("\t" +booknameArr[i]);
 			System.out.print("\t" +publisherArr[i]);
 			System.out.println("\t\t" +priceArr[i]);
+		}
+	}
+	
+	//3.ê°ì²´ë°°ì—´ ì¶œë ¥ìš©
+	void printBookObjArr()
+	{
+		for(int i=0; i<bookArr.length; ++i)
+		{
+			System.out.print("\t" +bookArr[i].bookid1);
+			System.out.print("\t" +bookArr[i].bookname1);
+			System.out.print("\t" +bookArr[i].publisher1);
+			System.out.println("\t\t" +bookArr[i].price1);
 		}
 	}
 }

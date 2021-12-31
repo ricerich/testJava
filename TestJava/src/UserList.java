@@ -6,36 +6,36 @@ import java.sql.Statement;
 
 public class UserList 
 {
-	Connection con; // 1.¸â¹öº¯¼ö
+	Connection con; // 1.ë©¤ë²„ë³€ìˆ˜
 
-	public void getCon()// 3.(ÀÏ¹İ) ¸Ş¼Òµå 
+	public void getCon()// 3.(ì¼ë°˜) ë©”ì†Œë“œ 
 	{
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String userid = "madang"; // c##Ãß°¡
-		String pwd = "madang"; // c##Ãß°¡
+		String userid = "madang"; // c##ì¶”ê°€
+		String pwd = "madang"; // c##ì¶”ê°€
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("µå¶óÀÌ¹ö ·Îµå ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ë¡œë“œ ì„±ê³µ");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ÁØºñ .....");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì¤€ë¹„ .....");
 			con = DriverManager.getConnection(url, userid, pwd);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void getUserList() { // 3.¸Ş¼Òµå
+	public void getUserList() { // 3.ë©”ì†Œë“œ
 		String query = "SELECT custid, name, address, phone FROM customer";
 		try {
 			Statement stmt = con.createStatement(); // 2
 			ResultSet rs = stmt.executeQuery(query); // 3
-			System.out.println("»ç¿ëÀÚID \t °í°´¸í \t\tÁÖ¼Ò \t\t\tÀüÈ­¹øÈ£");
+			System.out.println("ì‚¬ìš©ìID \t ê³ ê°ëª… \t\tì£¼ì†Œ \t\t\tì „í™”ë²ˆí˜¸");
 			while (rs.next()) {
 				System.out.print("\t" + rs.getInt(1));
 				System.out.print("\t" + rs.getString(2));
