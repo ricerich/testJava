@@ -9,17 +9,17 @@ public class TimerThread extends Thread
 //		super.run();
 //	}
 	
-	//Å¬·¡½º ¸¸µé¶§ ±¸¼º 3¿ä¼Ò
-	//1.¸â¹ö º¯¼ö
-	//2.»ı¼ºÀÚ (¸Ş¼Òµå)
-	//3.(ÀÏ¹İ) ¸Ş¼Òµå
+	//í´ë˜ìŠ¤ ë§Œë“¤ë•Œ êµ¬ì„± 3ìš”ì†Œ
+	//1.ë©¤ë²„ ë³€ìˆ˜
+	//2.ìƒì„±ì (ë©”ì†Œë“œ)
+	//3.(ì¼ë°˜) ë©”ì†Œë“œ
 	
-	//¿ìÅ¬¸¯ -> source -> override/implements method
+	//ìš°í´ë¦­ -> source -> override/implements method
 	
-	//1.¸â¹öº¯¼ö
+	//1.ë©¤ë²„ë³€ìˆ˜
 	JLabel tLabel;
 	
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public TimerThread(JLabel timerLabel)
 	{
 		tLabel = timerLabel;

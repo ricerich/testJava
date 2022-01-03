@@ -2,18 +2,18 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class ThreadTimerEx extends JFrame//GUI ÆÇ¶§±â, ÄÜ¼Ö¾Æ´Ô! 
+public class ThreadTimerEx extends JFrame//GUI íŒë•Œê¸°, ì½˜ì†”ì•„ë‹˜! 
 {
 
-	public ThreadTimerEx()//ÃÊ±âÈ­
+	public ThreadTimerEx()//ì´ˆê¸°í™”
 	{
-		setTitle("¿¹Á¦11111");
+		setTitle("ì˜ˆì œ11111");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		
-		// Å¸ÀÌ¸Ó °ªÀ» Ãâ·ÂÇÒ ·¹ÀÌºí »ı¼º
+		// íƒ€ì´ë¨¸ ê°’ì„ ì¶œë ¥í•  ë ˆì´ë¸” ìƒì„±
 		JLabel timerLabel = new JLabel();
 		timerLabel.setFont(new Font("Gothic", Font.ITALIC, 80));
 		c.add(timerLabel);
@@ -22,7 +22,7 @@ public class ThreadTimerEx extends JFrame//GUI ÆÇ¶§±â, ÄÜ¼Ö¾Æ´Ô!
 		
 		setSize(250,150);
 		setVisible(true);
-		th.start(); // Å¸ÀÌ¸Ó ½º·¹µåÀÇ ½ÇÇàÀ» ½ÃÀÛÇÏ°Ô ÇÑ´Ù.
+		th.start(); // íƒ€ì´ë¨¸ ìŠ¤ë ˆë“œì˜ ì‹¤í–‰ì„ ì‹œì‘í•˜ê²Œ í•œë‹¤.
 
 		
 		
