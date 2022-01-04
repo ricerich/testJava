@@ -12,7 +12,10 @@ public class ContentPaneEx extends JFrame
 		
 		//1.컨테이너 만들어서, 프레임에 꽂는다.		
 		Container c = getContentPane();
-		c.setBackground(Color.ORANGE);
+		
+//		FlowLayout fl1 = new FlowLayout();
+//		c.setLayout(fl1);
+		
 		c.setLayout(new FlowLayout());
 		
 		//2.버튼 만들어서, 컨테이너에 꽂는다.
