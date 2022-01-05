@@ -1,7 +1,6 @@
 
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 public class MyFrame4 extends JFrame 
@@ -22,7 +21,7 @@ public class MyFrame4 extends JFrame
 		
 //		c.addMouseListener(마우스리스너);
 		c.add(la);
-		c.addMouseListener(new MyMouseListener());
+//		c.addMouseListener(new MyMouseListener());
 
 		setSize(300, 200);
 		setVisible(true);
@@ -31,22 +30,20 @@ public class MyFrame4 extends JFrame
 	//4.내부 클래스
 	private class MyMouseListener implements MouseListener
 	{
-
 		@Override
-		public void mouseClicked(MouseEvent e) {
+		public void mouseClicked(MouseEvent e) 
+		{
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mousePressed(MouseEvent e) {
-			
+		public void mousePressed(MouseEvent e) 
+		{
 			int x = e.getX();
 			int y = e.getY();
 			
 			la.setLocation(x,y);
-			
-			
 		}
 
 		@Override
