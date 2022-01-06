@@ -13,6 +13,8 @@ public class MyFrame4 extends JFrame
 	{
 		setTitle("예제4-마우스리스너");
 		
+		System.out.println();
+		
 		la = new JLabel("헬로우~!");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

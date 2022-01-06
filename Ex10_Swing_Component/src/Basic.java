@@ -10,11 +10,11 @@ public class Basic
 //		new JFrame05();
 //		new JFrame06();
 //		new JFrame07();
-		new JFrame08();
-		new JFrame09();
+//		new JFrame08();
+//		new JFrame09();
 //		new JFrame10();
 //		new JFrame11();
 //		new JFrame12();
-//		new JFrame13();
+		new JFrame13();
 	}
 }
