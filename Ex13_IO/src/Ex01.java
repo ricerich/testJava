@@ -4,9 +4,16 @@ public class Ex01
 {
 	void test()
 	{
+		int a=0;
+		
 		FileReader in = null;
+		
 		try {
-			in = new FileReader("c:\\windows\\system.ini"); 
+			in = new FileReader("c:\\windows\\system.ini");
+			
+			a=3;
+			a= a + 5;
+			
 			int c;
 			while ((c = in.read()) != -1) { // 한 문자씩 파일 끝까지 읽는다.
 				System.out.print((char)c);
