@@ -6,8 +6,10 @@ class ServerExample4 {
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(9002);
+            System.out.println("대기중...");
             while (true) {
                 Socket socket = serverSocket.accept();
+                System.out.println("11111");
                 Thread thread = new PerClinetThread(socket);
                 thread.start();
             }

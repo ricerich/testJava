@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
 
-
 class ChatSub extends JFrame implements ActionListener, Runnable, WindowListener 
 {
 	//1.GUI 부분
@@ -55,6 +54,7 @@ class ChatSub extends JFrame implements ActionListener, Runnable, WindowListener
 	public ChatSub() 
 	{
 		super("Chatting!!");
+		
 		this.init();
 		this.start();
 		this.setSize(500, 400);
@@ -308,6 +308,6 @@ class ChatSub extends JFrame implements ActionListener, Runnable, WindowListener
 
 public class ChattingClient {
 	public static void main(String[] args) {
-		ChatSub cs = new ChatSub();
+		new ChatSub();
 	}
 }
