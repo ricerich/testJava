@@ -21,6 +21,7 @@
 					out.println("아이디와 비밀번호를 확인해 주세요");
 					out.println("</div>");
 				}
+
 			%>
 			<form class="form-signin" action="j_security_check" method="post">
 				<div class="form-group">
