@@ -19,8 +19,8 @@
 			String id_token = "1";
 
 			try {
-// 				String sql = "select * from member where id like '%"+ id_token +"%'";//State 형식
-				String sql = "select * from member where id like '%' || ? || '%' ";
+				String sql = "select * from member where id like '%"+ id_token +"%'";//State 형식
+// 				String sql = "select * from member where id like '%' || ? || '%' ";
 				System.out.println(sql);
 				pstmt = conn.prepareStatement(sql);
 // 				pstmt.clearParameters();
