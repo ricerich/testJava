@@ -10,11 +10,12 @@ public class DBConnection {
 
 		Connection conn = null;		
 	
-		String url = "jdbc:mysql://localhost:3306/WebMarketDB";
-		String user = "root";
-		String password = "1234";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "webmarket";
+		String password = "webmarket";
 
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
 		conn = DriverManager.getConnection(url, user, password);		
 		
 		return conn;
