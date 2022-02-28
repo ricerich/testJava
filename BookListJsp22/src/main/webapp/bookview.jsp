@@ -9,8 +9,8 @@
 	String bookid = (request.getParameter("bookid") == null) ? "1" : request.getParameter("bookid");
 	
 	ResultSet myResultSet = stmt.executeQuery("SELECT * FROM BOOK WHERE bookid='" + bookid + "'");
-	if (myResultSet != null) {
-		myResultSet.next();
+	if (myResultSet.next()) {
+		
 		
 %>
 <html>

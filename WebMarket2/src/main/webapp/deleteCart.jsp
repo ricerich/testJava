@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
+<%@ page import="dao.ProductRepository_"%>
 
 <%
 	String id = request.getParameter("cartId");

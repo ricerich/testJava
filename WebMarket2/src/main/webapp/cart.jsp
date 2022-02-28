@@ -1,7 +1,7 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
+<%@ page import="dao.ProductRepository_"%>
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />

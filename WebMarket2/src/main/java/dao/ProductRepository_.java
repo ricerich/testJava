@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 import dto.Product;
 
-public class ProductRepository {
+public class ProductRepository_ {
 
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
-	private static ProductRepository instance = new ProductRepository();
+	private static ProductRepository_ instance = new ProductRepository_();
 
-	public static ProductRepository getInstance(){
+	public static ProductRepository_ getInstance(){
 		return instance;
 	} 
 
 
-	public ProductRepository() {
+	public ProductRepository_() {
 		Product phone = new Product("P1234", "iPhone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334X750 Renina HD display, 8-megapixel iSight Camera");
 		phone.setCategory("Smart Phone");

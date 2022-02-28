@@ -24,50 +24,50 @@
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="productId" /></label>
 				<div class="col-sm-3">
-					<input type="text" id ="productId" name="productId" class="form-control" >
+					<input type="text" id ="productId" name="productId" class="form-control" value='P0001'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="pname" /></label>
 				<div class="col-sm-3">
-					<input type="text" id ="name" name="name" class="form-control" >
+					<input type="text" id ="name" name="name" class="form-control" value='공기청정기'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="unitPrice"/></label>
 				<div class="col-sm-3">
-					<input type="text" id ="unitPrice" name="unitPrice" class="form-control" >
+					<input type="text" id ="unitPrice" name="unitPrice" class="form-control" value='300000'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="description" /></label>
 				<div class="col-sm-5">
 					<textarea name="description" cols="50" rows="2"
-						class="form-control"></textarea>
+						class="form-control">위닉스 퓨리케어 공기청정기</textarea>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="manufacturer"/></label>
 				<div class="col-sm-3">
-					<input type="text" name="manufacturer" class="form-control">
+					<input type="text" name="manufacturer" class="form-control" value='LG전자'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="category" /></label>
 				<div class="col-sm-3">
-					<input type="text" name="category" class="form-control" >
+					<input type="text" name="category" class="form-control" value='AirCleaner'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="unitsInStock" /></label>
 				<div class="col-sm-3">
-					<input type="text" id ="unitsInStock" name="unitsInStock" class="form-control" >
+					<input type="text" id ="unitsInStock" name="unitsInStock" class="form-control" value='15'>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="condition" /></label>
 				<div class="col-sm-5">
-					<input type="radio" name="condition" value="New " ><fmt:message key="condition_New" />
+					<input type="radio" name="condition" value="New" checked><fmt:message key="condition_New" />
 					<input type="radio" name="condition" value="Old" ><fmt:message key="condition_Old" /> 
 					<input type="radio" name="condition" value="Refurbished" ><fmt:message key="condition_Refurbished" />
 				</div>
