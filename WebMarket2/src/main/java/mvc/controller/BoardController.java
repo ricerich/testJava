@@ -62,8 +62,8 @@ public class BoardController extends HttpServlet {
 	//등록된 글 목록 가져오기	
 	public void requestBoardList(HttpServletRequest request){
 			
-		BoardDAO dao = BoardDAO.getInstance();
-		List<BoardDTO> boardlist = new ArrayList<BoardDTO>();
+		BoardDAO dao = BoardDAO.getInstance();//DB에서 받아온 data 저장: 1.ResultSet(rs) -> 2.String 정도?
+		List<BoardDTO> boardlist = new ArrayList<BoardDTO>();// 2.string -> 3.객체배열
 		
 	  	int pageNum=1;
 		int limit=LISTCOUNT;

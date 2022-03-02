@@ -80,7 +80,8 @@ public class BoardDAO {
 
 		try {
 			conn = DBConnection.getConnection();
-			pstmt = conn.prepareStatement(sql);
+//			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			rs = pstmt.executeQuery();
 
 			while (rs.absolute(index)) {
