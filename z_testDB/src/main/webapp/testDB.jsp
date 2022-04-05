@@ -17,7 +17,7 @@
 // 	else
 // 		user_id = request.getParameter("user_id").trim();
 		
-	String user_id = (request.getParameter("user_id") == null) ? "I" : request.getParameter("user_id").trim(); ;
+	String user_id = (request.getParameter("user_id") == null) ? "" : request.getParameter("user_id").trim(); ;
 
 	QueryBean.getConnection();
 
