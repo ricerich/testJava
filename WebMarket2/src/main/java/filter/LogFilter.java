@@ -3,14 +3,15 @@ package filter;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class LogFilter implements Filter  {
 	
-	public void  init(FilterConfig config) throws ServletException{
-		System.out.println("WebMarket 초기화...."); 
-	}
+//	public void  init(FilterConfig config) throws ServletException{
+//		System.out.println("WebMarket 초기화...."); 
+//	}
 	
 	public void  doFilter(ServletRequest request,ServletResponse response,FilterChain chain) throws java.io.IOException, ServletException {
 		System.out.println(" 접속한 클라이언트 IP : " + request.getRemoteAddr());
@@ -25,9 +26,9 @@ public class LogFilter implements Filter  {
 		System.out.println("=======================================================");
 	}
 
-	public void destroy( ){
-      
-	}
+//	public void destroy( ){
+//      
+//	}
 
 	private String getURLPath(ServletRequest request) {
 		HttpServletRequest req;
@@ -48,4 +49,6 @@ public class LogFilter implements Filter  {
 		calendar.setTimeInMillis(System.currentTimeMillis());
 		return formatter.format(calendar.getTime());
 	}
+
+
 }

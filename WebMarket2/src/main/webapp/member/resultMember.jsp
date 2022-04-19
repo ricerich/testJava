@@ -23,7 +23,9 @@
 				else if (msg.equals("2")) {
 					String loginId = (String) session.getAttribute("sessionId");
 					out.println(" <h2 class='alert alert-danger'>" + loginId + "님 환영합니다</h2>");
-				}				
+				}
+				else if (msg.equals("3"))
+					out.println(" <h2 class='alert alert-danger'>회원가입에 실패했습니다.</h2>");
 			} else {
 				out.println("<h2 class='alert alert-danger'>회원정보가 삭제되었습니다.</h2>");
 			}

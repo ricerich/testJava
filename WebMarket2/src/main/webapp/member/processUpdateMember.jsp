@@ -41,6 +41,7 @@
 	<sql:param value="<%=id%>" />
 </sql:update>
 
+
 <c:if test="${resultSet>=1}">
 	<c:redirect url="resultMember.jsp?msg=0" />
 </c:if>
