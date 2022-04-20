@@ -101,7 +101,6 @@ public class QueryBean
 	}
 	
 	//2.insert
-	
 	public int insertUserInfo(String user_id, String user_name, String user_phone, String user_grade)//시간빼고 다 받아옴, db시간을 쓰기위해서
 	{
 		String query = "";
@@ -115,7 +114,10 @@ public class QueryBean
 //		query += "        ('"+ user_id +"','"+ user_name +"','"+user_phone+"', '"+user_grade+"', sysdate) ";
 		query += "        (?, ?, ?, ?, sysdate) ";
 		
-		try {
+		System.out.println(query);
+		
+		try 
+		{
 			pstmt = conn.prepareStatement(query);
 			
 			pstmt.clearParameters();
@@ -123,18 +125,8 @@ public class QueryBean
 			pstmt.setString(2, user_name);
 			pstmt.setString(3, user_phone);
 			pstmt.setString(4, user_grade);
-		} 
-		catch (SQLException e2) 
-		{
-			e2.printStackTrace();
-		}
-		
-		
-		System.out.println(query);
-		
-		try 
-		{
-//			pstmt = conn.prepareStatement(query);//확인용 statment처럼 쓸때, 디버기용
+			
+			
 			result = pstmt.executeUpdate();//쿼리를 db에 날린다 최종적으로!
 			//executeUpdate()함수는 insert, update, delete에만 쓴다! select에는 안쓴다!
 			//왜 그러냐면, 반환값이 다르다~! int이다~! cf)select는 ResultSet으로 반환한다.
@@ -158,7 +150,110 @@ public class QueryBean
 	}
 	
 	//3.update
+	public int updateUserInfo(String user_id, String user_name, String user_phone, String user_grade)//시간빼고 다 받아옴, db시간을 쓰기위해서
+	{
+		StringBuffer query1 = new StringBuffer();
+		
+		//String query = "";
+		PreparedStatement pstmt = null;
+		
+		int result = 0;//1:성공, 0:실패
+		
+		query1.append(" update ");
+		query1.append("        USER_INFO_SAMPLE ");
+		query1.append(" set ");
+//		query1.append("        U_NAME = '"+user_name+"', U_PHONE = '"+user_phone+"', U_GRADE = "+user_grade+", WRITE_TIME = sysdate ");
+		query1.append("        U_NAME = ?, U_PHONE = ?, U_GRADE = ?, WRITE_TIME = SYSDATE ");
+		query1.append(" where ");
+//		query1.append("        U_ID = '"+user_id+"' ");
+		query1.append("        U_ID = ? ");
+		
+		
+		System.out.println(query1.toString());
+		
+		try 
+		{
+			pstmt = conn.prepareStatement(query1.toString());
+			
+			pstmt.clearParameters();
+			
+			pstmt.setString(1, user_name);
+			pstmt.setString(2, user_phone);
+			pstmt.setString(3, user_grade);
+			pstmt.setString(4, user_id);
+			
+			result = pstmt.executeUpdate();//쿼리를 db에 날린다 최종적으로!
+			//executeUpdate()함수는 insert, update, delete에만 쓴다! select에는 안쓴다!
+			//왜 그러냐면, 반환값이 다르다~! int이다~! cf)select는 ResultSet으로 반환한다.
+		} 
+		catch (SQLException e1) 
+		{
+			e1.printStackTrace();
+		}
+		finally
+		{
+			try 
+			{
+				pstmt.close();
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}	
+		}
+		return result;
+	}
+	
+	
 	//4.delete
+	public int deleteUserInfo(String user_id)//시간빼고 다 받아옴, db시간을 쓰기위해서
+	{
+		StringBuffer query1 = new StringBuffer();
+		
+		//String query = "";
+		PreparedStatement pstmt = null;
+		
+		int result = 0;//1:성공, 0:실패
+		
+		query1.append(" delete ");
+		query1.append("       from ");
+		query1.append("              USER_INFO_SAMPLE ");
+		query1.append("       where");
+//		query1.append("              U_ID = '"+user_id+"'");
+		query1.append("              U_ID = ?");
+		
+		
+		System.out.println(query1.toString());
+		
+		try 
+		{
+			pstmt = conn.prepareStatement(query1.toString());
+			
+			pstmt.clearParameters();
+			
+			pstmt.setString(1, user_id);
+			
+			result = pstmt.executeUpdate();//쿼리를 db에 날린다 최종적으로!
+			//executeUpdate()함수는 insert, update, delete에만 쓴다! select에는 안쓴다!
+			//왜 그러냐면, 반환값이 다르다~! int이다~! cf)select는 ResultSet으로 반환한다.
+		} 
+		catch (SQLException e1) 
+		{
+			e1.printStackTrace();
+		}
+		finally
+		{
+			try 
+			{
+				pstmt.close();
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}	
+		}
+		return result;
+	}
 	
 
 }
