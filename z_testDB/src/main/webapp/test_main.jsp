@@ -74,7 +74,7 @@
 // 						res +="<td><br>"+"<button type='button' class='btn btn-primary' value='"+user_id+"' onclick='updateData(this.value)'>수정</button>"+"<br></td>";
 // 						res +="<td><br>"+"<button type='button' class='btn btn-primary' value='"+user_id+"' onclick='updateData(this.value)'>삭제</button>"+"<br></td>";
 						res +="<td><br>"+"<button type='button' class='btn btn-primary' onclick='toInput(\""+user_id+"\",\""+user_name+"\",\""+user_phone+"\",\""+user_grade+"\")'>수정</button>"+"<br></td>";
-						res +="<td><br>"+"<button type='button' class='btn btn-primary' value='"+user_id+"' onclick='deleteData(this.value)'>삭제</button>"+"<br></td>";
+						res +="<td><br>"+"<button type='button' class='btn btn-primary' value='"+user_id+"' onclick='deleteConfirm(this.value)'>삭제</button>"+"<br></td>";
 						res +="</tr>";
 					}
 				}
@@ -84,6 +84,13 @@
 				resDiv.innerHTML = res;
 			}
 		}
+	}
+	
+	function deleteConfirm(user_id)
+	{
+		if(confirm("정말 삭제하시겠습니까?"))
+			deleteData(user_id);
+			
 	}
 	
 	//4.삭제 ajax
